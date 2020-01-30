@@ -8,9 +8,15 @@ namespace BathHouse
 {
     class ProfessionalSwimmer : Swimmer
     {
-        public ProfessionalSwimmer(string name, BathingSuit suit);
+        /// <summary>
+        /// Constructor using name and suit constructor
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="suit"></param>
+        public ProfessionalSwimmer(string name, BathingSuit suit) : base(name, suit)
         {
-            this.name
+            SetName(name);
+            SetSuit(suit);
         }
     }
 }
