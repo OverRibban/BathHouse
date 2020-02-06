@@ -10,7 +10,8 @@ namespace BathHouse
     {
         static void Main(string[] args)
         {
-            SwimmerTest(args);
+            //SwimmerTest(args);
+            BubblePoolTest(args);
         }
         public static void SwimmerTest(String[] args)
         {
@@ -36,6 +37,52 @@ namespace BathHouse
             Console.ReadKey();
 
 
+        }
+        public static void BubblePoolTest(String[] args)
+        {
+            BubblePool newPool = new BubblePool(5);
+            Swimmer johan = new Swimmer("Johan");
+            for (int i = 4; (i > 0); i--)
+            {
+                newPool.GetIn(new Swimmer("Johan"));
+            }
+            try
+            {
+                newPool.GetIn(johan);
+                // här kastas PoolDirtyException.
+            }
+            catch
+            {
+                Console.WriteLine("All swimmers has to leave the pool!");
+                newPool.Clean();
+            }
+            newPool.GetIn(johan);
+            newPool.GetIn(new Swimmer("Johan"));
+            // detta borde alltså inte vara något problem längre.
+            Console.ReadKey();
+        }
+        public static void LockerRoomTest(String[] args)
+        {
+            LockerRoom<String> stringLockers = new LockerRoom<String>();
+            stringLockers.Add(1, new Locker<String>("junk"));
+            stringLockers.Add(3, new Locker<String>("towel"));
+            stringLockers.Add(4, new Locker<String>("goggles"));
+            stringLockers.Add(190, new Locker<String>("snorkle"));
+            Locker<String> locker = stringLockers.Find(3);
+            Console.WriteLine(locker.GetContents());
+            // Vi borde fått ut "towel" i terminalen
+            if (stringLockers.HasThing("goggles"))
+            {
+                Console.WriteLine("We found goggles in a locker!");
+                // borde komma ut
+            }
+            if (stringLockers.HasThing("sandwich"))
+            {
+                Console.WriteLine("We found a sandwich, ugh!");
+                // borde INTE komma ut
+            }
+            ListOfObjects<string> list = new ListOfObjects<string>();
+            list.AddObject("Forty-two");
         }
     }
 }

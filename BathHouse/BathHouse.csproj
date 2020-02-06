@@ -45,9 +45,13 @@
   <ItemGroup>
     <Compile Include="BathingSuit.cs" />
     <Compile Include="BubblePool.cs" />
+    <Compile Include="Locker.cs" />
+    <Compile Include="LockerRoom.cs" />
+    <Compile Include="PoolPartyException.cs" />
     <Compile Include="ProfessionalSwimmer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveBubblePool.cs" />
     <Compile Include="Swimmer.cs" />
     <Compile Include="YoungSwimmer.cs" />
   </ItemGroup>
