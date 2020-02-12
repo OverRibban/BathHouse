@@ -8,6 +8,7 @@ namespace BathHouse
 {
     class Locker<T>
     {
+        private int id;
         private T contents;
         public Locker(T contents) {
             this.contents = contents;

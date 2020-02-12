@@ -11,17 +11,18 @@ namespace BathHouse
         private List<Locker<T>> lockerList = new List<Locker<T>>();
         public void Add<T>(int id, T contents)
         {
-
+            contents.
+            lockerList.Add(contents);
         }
-        public int Find(int id)
+        public int Find<T>(int id)
         {
-            return id;
+            return lockerList.IndexOf;
         }
         public bool HasThing<T>(T contents)
         {
             foreach (Locker<T> item in lockerList)
             {
-                if (item.GetContents() = contents)
+                if (item.GetContents() == contents)
                 {
                     return true;
                 }
